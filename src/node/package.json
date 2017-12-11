@@ -1,0 +1,13 @@
+{
+  "name": "komodo-typescript-lsp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "dependencies": {
+    "javascript-typescript-langserver": "^2.5.5"
+  }
+}

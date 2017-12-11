@@ -1,0 +1,2 @@
+Do not touch these files unless you know what you're doing. They do not need
+to be modified at all for your addon to work.

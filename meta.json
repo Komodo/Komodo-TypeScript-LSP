@@ -1,0 +1,13 @@
+{
+    "id": "typescript-lsp",
+    
+    "name": "TypeScript-LSP",
+    "description": "",
+    "author": "ActiveState",
+    "version": "1.0",
+    "homepage": "http://",
+    
+    "minVersion": "11.1",
+    "maxVersion": "11.1",
+    "platform": "any"
+}

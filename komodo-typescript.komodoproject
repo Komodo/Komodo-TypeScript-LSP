@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Komodo Project File - DO NOT EDIT -->
+<project id="64acce4b-5386-4373-a9fc-d4e859d69cdc" kpf_version="5" name="komodo-typescript.komodoproject">
+<preference-set idref="64acce4b-5386-4373-a9fc-d4e859d69cdc" id="project" preftype="project">
+  <long id="codeintel.scanner.max_depth">0</long>
+  <string relative="path" id="import_dirname"></string>
+  <string id="import_exclude_matches">*.*~;*.bak;*.tmp;CVS;.#*;*.pyo;*.pyc;.svn;.git;.hg;.bzr;*%25*;tmp*.html;.DS_Store;*.swp;*.kpf;*.komodoproject;.komodotools;__pycache__;node_modules</string>
+  <string id="last_local_directory">None</string>
+  <string id="last_remote_directory">None</string>
+  <long id="prefs_version">1</long>
+</preference-set>
+</project>

@@ -1,0 +1,4 @@
+build
+node_modulesbuild
+.komodotools
+/node_modules

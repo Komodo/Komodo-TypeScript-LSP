@@ -1,0 +1,3 @@
+content %AddonId% content/
+skin %AddonId% classic/1.0 skin/
+%locale%
