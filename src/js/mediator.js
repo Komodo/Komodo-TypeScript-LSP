@@ -2,10 +2,11 @@
 
     const {Cc, Ci}  = require("chrome");
     const logging = require("ko/logging");
-    const log = logging.getLogger("%AddonId%/mediator");
+    const log = logging.getLogger("typescript-lsp/mediator");
     const koFile = require("ko/file");
     const koResolve = Cc["@activestate.com/koResolve;1"].getService(Ci.koIResolve);
     const prefs = require("ko/prefs");
+    const system = require("sdk/system");
 
     var Mediator = Object.assign({}, require("codeintel/service/mediator/lsp"));
 
@@ -14,12 +15,20 @@
 
         this.start = function ()
         {
-            var addonPath = koResolve.uriToPath("chrome://%AddonId%/content/js/mediator.js");
+            var addonPath = koResolve.uriToPath("chrome://typescript-lsp/content/js/mediator.js");
             addonPath = koFile.join(koFile.dirname(addonPath), '..');
 
-            var binary = addonPath + "/node/node_modules/javascript-typescript-langserver/lib/language-server-stdio.js";
-            binary = prefs.getString("codeintel.typescript.binary", binary);
-            var args = prefs.getString("codeintel.typescript.args").match(/"[^"]+"|'[^']+'|\S+/g) || [];
+            var binary = "node";
+            if ( system.platform.indexOf('win'))
+                binary += ".exe";
+            binary = prefs.getString("nodejsDefaultInterpreter") || binary;
+
+            var lspfile = addonPath + "/node/node_modules/javascript-typescript-langserver/lib/language-server-stdio.js";
+            lspfile = prefs.getString("codeintel.typescript.binary", lspfile);
+            lspfile = koFile.join(lspfile); // Replaces slashes on Windows
+
+            var args = [lspfile];
+            args = args.concat(prefs.getString("codeintel.typescript.args").match(/"[^"]+"|'[^']+'|\S+/g) || []);
             
             this.spawn(binary, args);
         };
